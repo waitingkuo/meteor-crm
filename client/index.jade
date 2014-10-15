@@ -1,0 +1,21 @@
+template(name="index")
+
+  header.header.fixed-top.clearfix
+    // Logo Start
+    .brand
+      a.logo(href="{{pathFor 'index'}}")
+        img(src="images/logo.png")
+
+      .sidebar-toggle-box
+        .fa.fa-bars
+
+  aside
+    #sidebar.nav-collapse
+      .leftside-navigation
+        ul.sidebar-menu#nav-accordion
+
+          li
+            a.active
+              i.fa.fa-dashboard
+              span People
+
