@@ -1,0 +1,22 @@
+template(name="setting")
+
+  .row
+    .col-xs-12
+      section.panel
+       .panel-body
+
+         +autoForm collection="Projects" type="update" doc=project
+
+           fieldset
+             legend Project
+
+             // Project Name
+             +afQuickField name="projectName"
+
+             // Api Token
+             +afFieldLabel name="apiToken"
+             p {{project.apiToken}}
+        
+           br
+
+           button.btn.btn-primary(type="submit") UPDATE

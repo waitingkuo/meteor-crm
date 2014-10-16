@@ -13,4 +13,7 @@ anti:fake
 tmeasday:crypto-md5
 aldeed:autoform
 aldeed:collection2
+accounts-ui
+accounts-password
+stylus
 

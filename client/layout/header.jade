@@ -9,6 +9,14 @@ template(name="header")
       .sidebar-toggle-box
         .fa.fa-bars
 
+    .nav.notify-row#top_menu
+      ul.nav.top-menu
+        p {{projectName}}
+  
+    .top-nav.clearfix
+      ul.nav.pull-right.top-menu
+        +loginButtons align="right"
+
 template(name="sidebar")
   aside
     #sidebar.nav-collapse
@@ -16,12 +24,12 @@ template(name="sidebar")
         ul.sidebar-menu#nav-accordion
 
           li
-            a.active
+            a(class="{{isActive 'index'}}", href="{{pathFor 'index'}}")
               i.fa.fa-dashboard
               span People
 
           li
-            a
+            a(class="{{isActive 'setting'}}", href="{{pathFor 'setting'}}")
               i.fa.fa-cog
               span Setting
 
