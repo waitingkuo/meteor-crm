@@ -32,16 +32,25 @@ Meteor.startup ->
             projectUser: ProjectUsers.findOne
                           projectId: project._id
                           projectUserId: @params.projectUserId
+            projectUserEvents: ProjectUserEvents.find {
+                      projectId: project._id
+                      projectUserId: @params.projectUserId
+                    }, {
+                      sort:
+                        createdAt: -1
+                    }
           }
 
         return {
           projectUser: {}
+          projectUserEvents: []
         }
 
       waitOn: ->
         project = Projects.findOne()
         if project?
           Meteor.subscribe 'projectUser', project._id, @params.projectUserId
+          Meteor.subscribe 'projectUserEvents', project._id, @params.projectUserId
 
     @route 'setting',
       path: '/setting'

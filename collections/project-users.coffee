@@ -31,7 +31,6 @@ if Meteor.isServer
   Meteor.methods
     identify: (apiToken, userId, properties) ->
       project = Projects.findOne apiToken: apiToken
-      console.log 'project', project, userId
       if project
         user =
           projectId: project._id

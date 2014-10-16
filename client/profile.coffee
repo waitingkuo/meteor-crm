@@ -6,3 +6,5 @@ Template.profile.helpers
       link += CryptoJS.MD5(@projectUser.email).toString()
       return link
 
+  fromNow: ->
+    moment(@createdAt).fromNow()

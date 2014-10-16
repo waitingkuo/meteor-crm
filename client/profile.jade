@@ -18,13 +18,9 @@ template(name="profile")
         .panel-body
           .recent-act
             h1 Recent Activity
-            br
-            br
-            .activity-desk
-              h2 1 Hour Ago
-              p Purchased new stationary items for head office
-            br
-            br
-            .activity-desk
-              h2 2 Hour Ago
-              p Purchased new stationary items for head office
+            each projectUserEvents
+              br
+              br
+              .activity-desk
+                h2 {{fromNow}}
+                p {{eventName}}

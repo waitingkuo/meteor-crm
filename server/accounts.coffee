@@ -6,3 +6,7 @@ Meteor.startup ->
       projectName: 'My First Project'
 
     return user
+
+  #Meteor.onConnection (conn) -> 
+  #  console.log conn.id
+  #  return conn

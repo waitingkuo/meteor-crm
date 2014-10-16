@@ -1,7 +1,7 @@
 @ProjectUserEvents = new Meteor.Collection 'projectUserEvents'
 
 Schema = @Schema or {}
-Schema.ProjectUsers = new SimpleSchema
+Schema.ProjectUserEvents = new SimpleSchema
 
   projectId:
     type: String
@@ -18,6 +18,25 @@ Schema.ProjectUsers = new SimpleSchema
 
   createdAt:
     type: Date
-    denyUpdate: true
-    defaultValue: -> new Date
+    autoValue: -> new Date()
+
+ProjectUserEvents.attachSchema Schema.ProjectUserEvents
+
+if Meteor.isServer
+  Meteor.methods
+    track: (apiToken, userId, eventName, properties) ->
+      project = Projects.findOne apiToken: apiToken
+      if project
+        event =
+          projectId: project._id
+          projectUserId: userId
+          eventName: eventName
+          properties: {}
+        
+        if properties
+          # do something
+          1+1
+
+        ProjectUserEvents.insert event
+         
 

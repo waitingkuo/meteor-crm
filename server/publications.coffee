@@ -19,12 +19,26 @@ Meteor.publish 'projectUsers', (projectId) ->
 Meteor.publish 'projectUser', (projectId, projectUserId) ->
   userId = @userId
 
-  project = Projects.findOne 
+  project = Projects.findOne
     _id: projectId
     userId: userId
 
   if project
-    return ProjectUsers.find 
+    return ProjectUsers.find
+      projectId: projectId
+      projectUserId: projectUserId
+
+  return []
+
+Meteor.publish 'projectUserEvents', (projectId, projectUserId) ->
+  userId = @userId
+
+  project = Projects.findOne
+    _id: projectId
+    userId: userId
+
+  if project
+    return ProjectUserEvents.find
       projectId: projectId
       projectUserId: projectUserId
 
