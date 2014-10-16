@@ -1,21 +1,11 @@
 template(name="index")
-
-  header.header.fixed-top.clearfix
-    // Logo Start
-    .brand
-      a.logo(href="{{pathFor 'index'}}")
-        img(src="images/logo.png")
-
-      .sidebar-toggle-box
-        .fa.fa-bars
-
-  aside
-    #sidebar.nav-collapse
-      .leftside-navigation
-        ul.sidebar-menu#nav-accordion
-
-          li
-            a.active
-              i.fa.fa-dashboard
-              span People
-
+  .row
+    each projectUsers
+      .col-md-4
+        a(href="{{pathFor 'profile'}}")
+          .mini-stat.clearfix
+            span.mini-stat-icon
+              img(style="margin-top: -5px; width: 60px;", src="{{avatar}}")
+            span.mini-stat-info 
+              span(style="font-size: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;") {{fullname}}
+              | {{email}}

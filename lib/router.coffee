@@ -9,7 +9,7 @@ Meteor.startup ->
       path: '/'
       template: 'index'
 
-    @route 'theme',
-      path: '/theme'
-      template: 'theme'
+    @route 'profile',
+      path: '/profile'
+      template: 'profile'
 

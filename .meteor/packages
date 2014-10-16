@@ -9,4 +9,8 @@ mizzao:bootstrap-3
 iron:router
 coffeescript
 pfafman:font-awesome-4
+anti:fake
+tmeasday:crypto-md5
+aldeed:autoform
+aldeed:collection2
 

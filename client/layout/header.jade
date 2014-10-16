@@ -1,0 +1,27 @@
+template(name="header")
+  header.header.fixed-top.clearfix
+    // Logo Start
+    .brand
+      a.logo(href="{{pathFor 'index'}}")
+        //img(src="images/logo.png")
+        span(style="color: white; line-height: 38px; padding-left: 20px;") Meteor CRM
+
+      .sidebar-toggle-box
+        .fa.fa-bars
+
+template(name="sidebar")
+  aside
+    #sidebar.nav-collapse
+      .leftside-navigation
+        ul.sidebar-menu#nav-accordion
+
+          li
+            a.active
+              i.fa.fa-dashboard
+              span People
+
+          li
+            a
+              i.fa.fa-cog
+              span Setting
+
