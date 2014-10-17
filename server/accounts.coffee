@@ -7,6 +7,10 @@ Meteor.startup ->
 
     return user
 
-  #Meteor.onConnection (conn) -> 
-  #  console.log conn.id
-  #  return conn
+  Meteor.onConnection (conn) -> 
+    console.log conn
+
+  #setInterval ( ->
+  #  console.log Meteor.server.sessions
+  #), 5000
+  
